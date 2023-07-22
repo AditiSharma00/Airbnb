@@ -25,7 +25,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Entype from 'react-native-vector-icons/Entypo';
-
+import Post from './src/Components/Post';
+import feed from './assets/data/feed';
+const post1=feed[0]
 function Section({children, title}) {
   const isDarkMode = useColorScheme() === 'dark';
   return (
@@ -67,7 +69,8 @@ function App() {
         backgroundColor={backgroundStyle.backgroundColor}
       />
 
-      <HomeScreen />
+      {/* <HomeScreen /> */}
+      <Post post={post1}/>
     </SafeAreaView>
     </NavigationContainer>
    
