@@ -1,27 +1,23 @@
 import React from 'react';
 import {View, Text, Image, Pressable} from 'react-native';
 import styles from './styles.js';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 const days = 7;
 
-const Post = (props) => {
-
+const Post = props => {
   const post = props.post;
 
-//   const navigation = useNavigation();
+  //   const navigation = useNavigation();
 
-//   const goToPostPage = () => {
-//     navigation.navigate('Post', {postId: post.id});
-//   }
+  //   const goToPostPage = () => {
+  //     navigation.navigate('Post', {postId: post.id});
+  //   }
 
   return (
-    <Pressable  style={styles.container}>
+    <Pressable style={styles.container}>
       {/* Image  */}
-      <Image
-        style={styles.image}
-        source={{uri: post.image}}
-      />
+      <Image style={styles.image} source={{uri: post.image}} />
 
       {/* Bed & Bedroom  */}
       <Text style={styles.bedrooms}>
@@ -36,8 +32,7 @@ const Post = (props) => {
       {/*  Old price & new price */}
       <Text style={styles.prices}>
         <Text style={styles.oldPrice}>${post.oldPrice}</Text>
-        <Text style={styles.price}>  ${post.newPrice} </Text>
-        / night
+        <Text style={styles.price}>${post.newPrice} </Text>
       </Text>
 
       {/*  Total price */}

@@ -1,19 +1,21 @@
-import React from "react";
-import {NavigationContainer} from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import DestinationSearchScreen from "../screens/DestinationSearch";
-import GuestsScreen from "../screens/Guests";
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import DestinationSearchScreen from '../screens/DestinationSearch';
+import GuestsScreen from '../screens/Guests';
 
-import HomeTabNavigator from "./HomeTabNavigator";
+import HomeTabNavigator from './HomeTabNavigator';
+import Post from '../Components/Post';
+import SearchResultsScreen from '../screens/SearchResults';
 
 const Stack = createStackNavigator();
 
-const Router = (props) => {
+const Router = props => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name={"Home"}
+          name={'Home'}
           component={HomeTabNavigator}
           options={{
             headerShown: false,
@@ -21,18 +23,25 @@ const Router = (props) => {
         />
 
         <Stack.Screen
-          name={"Destination Search"}
+          name={'Destination Search'}
           component={DestinationSearchScreen}
           options={{
-            title: "Search your destination"
+            title: 'Search your destination',
           }}
         />
 
         <Stack.Screen
-          name={"Guests"}
+          name={'Guests'}
           component={GuestsScreen}
           options={{
-            title: "How many people?"
+            title: 'How many people?',
+          }}
+        />
+        <Stack.Screen
+          name={'Search'}
+          component={SearchResultsScreen}
+          options={{
+            title: 'Search',
           }}
         />
       </Stack.Navigator>
